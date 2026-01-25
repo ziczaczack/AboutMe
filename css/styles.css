@@ -1,0 +1,189 @@
+:root {
+    --bg-color: #001F3F;
+    --text-color: rgb(255, 255, 255);
+    --accent-color: #5fa8be; 
+    --card-border: 1px solid var(--accent-color);
+    --nav-color: #4975c7;
+}
+
+body.light-mode {
+    --bg-color: #8fbbcf; 
+    --text-color: #000405; 
+    --accent-color: #7e529e; 
+    --card-border: #DDDDDD; 
+    --nav-color: #a9bbdd;
+}
+
+/* Global Styles */
+body {
+    background-color: var(--bg-color); 
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: var(--nav-color);
+}
+
+.navbar-brand {
+    color: var(--text-color); 
+}
+
+.nav-link {
+    color: var(--text-color); 
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
+}
+
+/* Theme Toggle Button */
+#theme-toggle svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+}
+
+.theme-icon-sun {
+    display: none;
+}
+.theme-icon-moon {
+    display: inline-block;
+}
+
+
+body.light-mode .theme-icon-sun {
+    display: inline-block; 
+}
+body.light-mode .theme-icon-moon {
+    display: none; 
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://wallpapers.com/images/featured/cyber-background-qrvi98v4g2ezuomr.jpg') no-repeat center center/cover; 
+    padding: 100px 0;
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hero h1 {
+    display: inline-block; 
+}
+
+/* Typing Animation */
+.text {
+    display: inline-block; 
+    font-size: 2.5rem;
+    height: 2.5rem; 
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 2s steps(15), cursor .4s step-end infinite alternate;
+}
+
+@keyframes cursor {
+    50% { border-color: transparent; }
+}
+
+@keyframes typing {
+    from { width: 0 }
+}
+
+.profile-carousel {
+    width: 200px; 
+    height: 200px;
+    margin-top: 20px;
+    
+    margin-left: auto;
+    margin-right: auto;
+
+    border-radius: 50%; 
+    overflow: hidden; 
+    border: 3px solid var(--accent-color); 
+}
+
+
+/*About card styles*/
+.card {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    border: 1px solid var(--accent-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+.skill-icons {
+    margin-top: 15px;  
+}
+
+.skill-icons img {
+    height: 35px;        
+    width: auto;        
+    margin-right: 15px;  
+    margin-bottom: 10px; 
+    
+    transition: transform 0.2s ease; 
+}
+
+.skill-icons img:hover {
+    transform: scale(1.15); 
+}
+
+/* Projects Grid */
+.projects .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Resume Section */
+.resume-iframe-container {
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    height: 600px;
+    overflow: hidden; 
+}
+
+.resume-iframe-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--bg-color);
+    padding: 20px;
+    border-top: 1px solid var(--accent-color);
+}
+
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s;
+}
+
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
