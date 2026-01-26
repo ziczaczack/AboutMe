@@ -1,43 +1,116 @@
 :root {
-    --bg-color: #001F3F;
-    --text-color: rgb(255, 255, 255);
-    --accent-color: #5fa8be; 
-    --card-border: 1px solid var(--accent-color);
-    --nav-color: #4975c7;
+    /* Color Palette - Dark Mode (Default) */
+    --bg-primary: hsl(222, 47%, 11%);
+    --bg-secondary: hsl(222, 47%, 15%);
+    --bg-accent: hsla(222, 47%, 20%, 0.8);
+
+    --text-primary: hsl(210, 40%, 98%);
+    --text-secondary: hsl(215, 20%, 75%);
+
+    --accent: hsl(199, 89%, 48%);
+    --accent-glow: hsla(199, 89%, 48%, 0.5);
+
+    --glass-bg: hsla(222, 47%, 15%, 0.7);
+    --glass-border: hsla(210, 40%, 98%, 0.1);
+
+    --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body.light-mode {
-    --bg-color: #8fbbcf; 
-    --text-color: #000405; 
-    --accent-color: #7e529e; 
-    --card-border: #DDDDDD; 
-    --nav-color: #a9bbdd;
+    --bg-primary: hsl(210, 40%, 98%);
+    --bg-secondary: hsl(210, 40%, 95%);
+    --bg-accent: hsla(210, 40%, 90%, 0.8);
+
+    --text-primary: hsl(222, 47%, 11%);
+    --text-secondary: hsl(222, 47%, 25%);
+
+    --accent: hsl(262, 52%, 47%);
+    --accent-glow: hsla(262, 52%, 47%, 0.3);
+
+    --glass-bg: hsla(210, 40%, 98%, 0.7);
+    --glass-border: hsla(222, 47%, 11%, 0.1);
+
+    --card-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
 }
 
 /* Global Styles */
 body {
-    background-color: var(--bg-color); 
-    color: var(--text-color);
-    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
 }
 
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+}
+
+.text-gradient {
+    background: linear-gradient(45deg, var(--text-primary), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+}
+
 .navbar {
-    background-color: var(--nav-color);
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--glass-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .navbar-brand {
-    color: var(--text-color); 
+    color: var(--text-primary) !important;
+    font-size: 1.5rem;
 }
 
 .nav-link {
-    color: var(--text-color); 
-    transition: color 0.3s;
+    color: var(--text-primary) !important;
+    font-weight: 500;
+    margin: 0 10px;
+    position: relative;
+    transition: var(--transition);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent);
+    transition: var(--transition);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
 }
 
 .nav-link:hover {
-    color: var(--accent-color);
+    color: var(--accent) !important;
 }
 
 /* Theme Toggle Button */
@@ -50,110 +123,190 @@ body {
 .theme-icon-sun {
     display: none;
 }
+
 .theme-icon-moon {
     display: inline-block;
 }
 
 
 body.light-mode .theme-icon-sun {
-    display: inline-block; 
+    display: inline-block;
 }
+
 body.light-mode .theme-icon-moon {
-    display: none; 
+    display: none;
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://wallpapers.com/images/featured/cyber-background-qrvi98v4g2ezuomr.jpg') no-repeat center center/cover; 
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background: radial-gradient(circle at top right, var(--bg-accent), transparent),
+        radial-gradient(circle at bottom left, var(--bg-accent), transparent),
+        var(--bg-primary);
+    position: relative;
+    overflow: hidden;
     padding: 100px 0;
-    animation: fadeIn 1s ease-in;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://wallpapers.com/images/featured/cyber-background-qrvi98v4g2ezuomr.jpg') no-repeat center center/cover;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
 }
 
 .hero h1 {
-    display: inline-block; 
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, var(--text-primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto 2rem;
 }
 
 /* Typing Animation */
-.text {
-    display: inline-block; 
-    font-size: 2.5rem;
-    height: 2.5rem; 
-    width: 100%;
+.typing-text {
+    border-right: 4px solid var(--accent);
     white-space: nowrap;
     overflow: hidden;
-    animation: typing 2s steps(15), cursor .4s step-end infinite alternate;
-}
-
-@keyframes cursor {
-    50% { border-color: transparent; }
+    width: 0;
+    margin: 0 auto;
+    animation: typing 3.5s steps(20) forwards, blink-caret 0.75s step-end infinite;
 }
 
 @keyframes typing {
-    from { width: 0 }
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: var(--accent)
+    }
 }
 
 .profile-carousel {
-    width: 200px; 
+    width: 200px;
     height: 200px;
     margin-top: 20px;
-    
+
     margin-left: auto;
     margin-right: auto;
 
-    border-radius: 50%; 
-    overflow: hidden; 
-    border: 3px solid var(--accent-color); 
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--accent-color);
 }
 
 
-/*About card styles*/
+/* Card Styles */
 .card {
-    color: var(--text-color);
-    background-color: var(--bg-color);
-    border: 1px solid var(--accent-color);
-    transition: transform 0.3s, box-shadow 0.3s;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    color: var(--text-primary);
+    transition: var(--transition);
+    overflow: hidden;
 }
 
 .card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px var(--accent-glow);
+}
+
+.card-img-top {
+    transition: var(--transition);
+}
+
+.card:hover .card-img-top {
     transform: scale(1.05);
-    box-shadow: 0 0 10px var(--accent-color);
+}
+
+/* About Section */
+.about h2 {
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.about h2::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 4px;
+    background: var(--accent);
+    bottom: -10px;
+    left: 0;
+    border-radius: 2px;
+}
+
+.about p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
 }
 
 .skill-icons {
-    margin-top: 15px;  
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    justify-content: center;
 }
 
 .skill-icons img {
-    height: 35px;        
-    width: auto;        
-    margin-right: 15px;  
-    margin-bottom: 10px; 
-    
-    transition: transform 0.2s ease; 
+    height: 45px;
+    width: auto;
+    filter: grayscale(100%);
+    transition: var(--transition);
+    opacity: 0.7;
 }
 
 .skill-icons img:hover {
-    transform: scale(1.15); 
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.2) rotate(5deg);
 }
 
-/* Projects Grid */
-.projects .row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-/* Resume Section */
 .resume-iframe-container {
-    border: 1px solid var(--accent-color);
-    border-radius: 5px;
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
     height: 600px;
-    overflow: hidden; 
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    background: var(--bg-secondary);
 }
 
 .resume-iframe-container iframe {
@@ -162,24 +315,87 @@ body.light-mode .theme-icon-moon {
     border: none;
 }
 
+/* Contact Section */
+.contact {
+    padding: 100px 0;
+}
+
+.contact h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
 
 /* Footer */
 footer {
-    background-color: var(--bg-color);
-    padding: 20px;
-    border-top: 1px solid var(--accent-color);
+    background-color: var(--bg-secondary);
+    padding: 40px 0;
+    border-top: 1px solid var(--glass-border);
+    color: var(--text-secondary);
 }
 
-/* Back to Top Button */
+footer a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+footer a:hover {
+    color: var(--text-primary);
+}
+
+.text-gradient {
+    background: linear-gradient(45deg, var(--text-primary), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Reveal Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Button Refinement */
+.btn-primary {
+    background: linear-gradient(45deg, var(--accent), hsl(199, 89%, 60%));
+    border: none;
+    font-weight: 600;
+    padding: 0.8rem 2rem;
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px var(--accent-glow);
+    background: linear-gradient(45deg, hsl(199, 89%, 60%), var(--accent));
+}
+
 #back-to-top {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: var(--accent-color);
-    color: var(--bg-color);
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.5s, visibility 0.5s;
+    transition: var(--transition);
 }
 
 #back-to-top.show {
@@ -187,3 +403,8 @@ footer {
     visibility: visible;
 }
 
+#back-to-top:hover {
+    transform: scale(1.1);
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+}
