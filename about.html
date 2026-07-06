@@ -1,164 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lim Lok - About</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">
-                    <p
-                        style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: larger;margin-top:10px">
-                        Lim Lok's Portfolio</p>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+    <header class="site-header">
+        <nav class="nav">
+            <a href="index.html" class="nav-brand">Lim Lok</a>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m-5-6.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m10 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m-10 5.196a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m10 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m-6.854-10.46a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m10 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5"/></svg>
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"/></svg>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="about.html"><u>About</u></a></li>
-                        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                        <li class="nav-item">
-                            <button id="theme-toggle" class="btn btn-outline-info ms-2">
-                                <svg class="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                    fill="currentColor" class="bi bi-sun-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m-5-6.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m10 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m-10 5.196a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m10 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m-6.854-10.46a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m10 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5" />
-                                </svg>
-
-                                <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                    fill="currentColor" class="bi bi-moon-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278" />
-                                </svg>
-                            </button>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </nav>
     </header>
 
     <main>
-        <section class="about container my-5">
-            <div class="row align-items-center mb-5">
-                <div class="col-lg-12">
-                    <h2 class="display-4 text-gradient">About Me</h2>
-                    <p class="lead mt-4 glass-panel p-4 text-primary font-weight-bold">
-                        Hello! I'm <strong>Lim Lok</strong>, a dedicated and passionate IT student currently pursuing my
-                        diploma in Information Technology at INTI International University & Colleges. With a strong
-                        foundation in both frontend and backend development, I have honed my skills in various
-                        programming languages and tools throughout my academic journey.
-                    </p>
-                </div>
-            </div>
-            <p class="text-secondary mb-4">From semester 1 until semester 6, I have mastered several core development
-                tools and technologies:</p>
-            <div class="skills row">
+        <section class="section" data-reveal>
+            <h2 class="section-title">About Me</h2>
+            <p class="lead">
+                Hello! I'm <strong>Lim Lok</strong>, a dedicated and passionate IT student currently pursuing my
+                diploma in Information Technology at INTI International University & Colleges. With a strong
+                foundation in both frontend and backend development, I have honed my skills in various
+                programming languages and tools throughout my academic journey.
+            </p>
+            <p class="lead" style="font-size:16px; margin-top:24px;">From semester 1 until semester 6, I have mastered several core development tools and technologies:</p>
 
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5>Frontend Development</h5>
-
-                            <div class="skill-icons">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-                                    alt="HTML5" />
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-                                    alt="CSS3" />
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-                                    alt="JavaScript" />
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
-                                    alt="Bootstrap" />
-                            </div>
-
-                        </div>
+            <div class="skills-grid">
+                <div class="card">
+                    <h3>Frontend Development</h3>
+                    <div class="skill-icons">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
                     </div>
                 </div>
-
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5>Backend & Data</h5>
-
-                            <div class="skill-icons">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
-                                    alt="Python" />
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
-                                    alt="C++" />
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
-                                    alt="Java" />
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg"
-                                    alt="SQLite" />
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
-                                    alt="PHP" />
-                            </div>
-
-                        </div>
+                <div class="card">
+                    <h3>Backend & Data</h3>
+                    <div class="skill-icons">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" alt="SQLite">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP">
                     </div>
                 </div>
-
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5>Tools & Others</h5>
-
-                            <div class="skill-icons">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
-                                    alt="Git" />
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
-                                    alt="GitHub" />
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg"
-                                    alt="VSCode" />
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pycharm/pycharm-original.svg"
-                                    alt="PyCharm" />
-                            </div>
-
-                        </div>
+                <div class="card">
+                    <h3>Tools & Others</h3>
+                    <div class="skill-icons">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VSCode">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pycharm/pycharm-original.svg" alt="PyCharm">
                     </div>
                 </div>
-
             </div>
 
-            <h3 class="mt-5">My Resume</h3>
-            <div class="resume-iframe-container my-3">
-                <iframe src="https://drive.google.com/file/d/17y081T_vAtCY2FAp3vlfKwpQWgcncSkN/preview"
-                    title="My Resume PDF Viewer">
-                </iframe>
+            <h3 style="margin-top:48px; margin-bottom:16px; font-size:24px;">My Resume</h3>
+            <div class="resume-frame">
+                <iframe src="https://drive.google.com/file/d/17y081T_vAtCY2FAp3vlfKwpQWgcncSkN/preview" title="My Resume PDF Viewer"></iframe>
             </div>
-            <a href="https://drive.google.com/file/d/17y081T_vAtCY2FAp3vlfKwpQWgcncSkN/view?usp=sharing"
-                class="btn btn-primary" download="Your_Name_Resume.pdf">
-                Download Resume
-            </a>
+            <a href="https://drive.google.com/file/d/17y081T_vAtCY2FAp3vlfKwpQWgcncSkN/view?usp=sharing" class="btn btn-primary" download="Your_Name_Resume.pdf">Download Resume</a>
         </section>
     </main>
 
-    <footer class="text-center">
+    <footer class="site-footer">
         <p>&copy; 2025 Lim Lok. All rights reserved.</p>
-        <a href="https://www.linkedin.com/in/lim-lok-90b892341/" target="_blank">LinkedIn</a> | <a
-            href="https://github.com/ziczaczack" target="_blank">GitHub</a>
+        <p><a href="https://www.linkedin.com/in/lim-lok-90b892341/" target="_blank">LinkedIn</a> &middot; <a href="https://github.com/ziczaczack" target="_blank">GitHub</a></p>
     </footer>
 
-    <button id="back-to-top" class="btn btn-secondary">↑</button>
+    <button id="back-to-top" aria-label="Back to top">&uarr;</button>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
 </body>
-
 </html>
