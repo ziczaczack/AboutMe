@@ -1,67 +1,269 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lim Lok - Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lim Lok — IT Student &amp; Developer</title>
+<meta name="description" content="Portfolio of Lim Lok, an Information Technology diploma student at INTI International University &amp; Colleges, Subang. Projects, skills and resume.">
+<meta name="author" content="Lim Lok">
+<meta name="theme-color" content="#faf8f5">
+
+<!-- Open Graph / social previews -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lim Lok — IT Student &amp; Developer">
+<meta property="og:description" content="Projects, skills and resume of an IT diploma student at INTI International University &amp; Colleges.">
+<meta property="og:image" content="https://i.imgur.com/SQGsjd0.jpeg">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='11' fill='%23c0512f'/></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+
+<!-- Marks the document as scripted (enables reveal animations) and applies the
+     saved theme before first paint so the page never flashes light-then-dark. -->
+<script>
+  (function () {
+    document.documentElement.classList.add('js');
+    try {
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      var a = localStorage.getItem('accent');
+      if (a) document.documentElement.style.setProperty('--accent', a);
+    } catch (e) {}
+  })();
+</script>
 </head>
+
 <body>
-    <header class="site-header">
-        <nav class="nav">
-            <a href="index.html" class="nav-brand">Lim Lok</a>
-            <div class="nav-right">
-                <ul class="nav-links">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m-5-6.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m10 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m-10 5.196a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m10 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m-6.854-10.46a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m10 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5"/></svg>
-                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"/></svg>
-                </button>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="site-header">
+  <nav class="nav" aria-label="Primary">
+    <a class="nav-brand" href="#top">
+      <span class="nav-dot" aria-hidden="true"></span>
+      Lim Lok
+    </a>
+
+    <div class="nav-right">
+      <div class="nav-links">
+        <a class="nav-link" href="#about" data-spy="about">About</a>
+        <a class="nav-link" href="#projects" data-spy="projects">Projects</a>
+        <a class="nav-link" href="#resume" data-spy="resume">Resume</a>
+        <a class="nav-link" href="#contact" data-spy="contact">Contact</a>
+      </div>
+
+      <div class="nav-tools">
+        <button class="swatch" type="button" data-accent="#c0512f" style="background:#c0512f" aria-label="Terracotta accent"></button>
+        <button class="swatch" type="button" data-accent="#3b4ea0" style="background:#3b4ea0" aria-label="Indigo accent"></button>
+        <button class="swatch" type="button" data-accent="#2f6e4f" style="background:#2f6e4f" aria-label="Forest accent"></button>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">◐</button>
+      </div>
+
+      <button class="nav-toggle" type="button" data-nav-toggle aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer">
+        <span aria-hidden="true"></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-drawer" id="nav-drawer">
+    <div class="nav-drawer-inner">
+      <a class="drawer-link" href="#about" data-spy-mobile="about">About</a>
+      <a class="drawer-link" href="#projects" data-spy-mobile="projects">Projects</a>
+      <a class="drawer-link" href="#resume" data-spy-mobile="resume">Resume</a>
+      <a class="drawer-link" href="#contact" data-spy-mobile="contact">Contact</a>
+      <div class="drawer-tools">
+        <span class="drawer-tools-label">Theme</span>
+        <button class="swatch" type="button" data-accent="#c0512f" style="background:#c0512f" aria-label="Terracotta accent"></button>
+        <button class="swatch" type="button" data-accent="#3b4ea0" style="background:#3b4ea0" aria-label="Indigo accent"></button>
+        <button class="swatch" type="button" data-accent="#2f6e4f" style="background:#2f6e4f" aria-label="Forest accent"></button>
+        <button class="theme-toggle theme-toggle-lg" type="button" data-theme-toggle aria-label="Toggle dark mode">◐</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<span id="top"></span>
+
+<main id="main">
+
+  <!-- ---------- HERO ---------- -->
+  <section class="container hero">
+    <div data-reveal>
+      <p class="eyebrow"><span class="eyebrow-rule" aria-hidden="true"></span>Welcome</p>
+      <h1 class="hero-title">Hi! I'm <em>Lim Lok</em> — an IT student who likes building things.</h1>
+      <p class="hero-lead">
+        Welcome to my portfolio. Here I showcase my journey and everything I've learned during my
+        Information Technology diploma at INTI International University &amp; Colleges, Subang.
+      </p>
+      <div class="button-row">
+        <a class="btn btn-primary" href="#projects">Explore my projects</a>
+        <a class="btn btn-link" href="#contact">Get in touch →</a>
+      </div>
+    </div>
+
+    <div class="hero-media" data-reveal data-reveal-delay="120">
+      <div class="hero-portrait">
+        <img src="https://i.imgur.com/SQGsjd0.jpeg" alt="Portrait of Lim Lok" width="800" height="1000">
+      </div>
+      <div class="hero-badge">
+        <span class="hero-badge-figure">6<span>&nbsp;semesters</span></span>
+        <span class="hero-badge-label">Diploma in IT · INTI</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- TECH STRIP ---------- -->
+  <div class="tech-strip">
+    <div class="tech-strip-inner">
+      <span>Python</span><span class="sep" aria-hidden="true">/</span>
+      <span>JavaScript</span><span class="sep" aria-hidden="true">/</span>
+      <span>Java</span><span class="sep" aria-hidden="true">/</span>
+      <span>C++</span><span class="sep" aria-hidden="true">/</span>
+      <span>PHP</span><span class="sep" aria-hidden="true">/</span>
+      <span>SQLite</span>
+    </div>
+  </div>
+
+  <!-- ---------- ABOUT ---------- -->
+  <section class="container section section-split" id="about">
+    <div data-reveal>
+      <p class="section-index">01 — About</p>
+    </div>
+
+    <div data-reveal data-reveal-delay="100">
+      <h2 class="section-statement">
+        A dedicated and passionate IT student, equally curious about what happens on the screen and behind it.
+      </h2>
+      <p class="prose">
+        I'm currently pursuing my diploma in Information Technology at INTI International University &amp; Colleges.
+        With a foundation in both frontend and backend development, I've spent the past six semesters getting
+        hands-on with a range of languages and tools.
+      </p>
+      <p class="prose prose-last">
+        From semester 1 to semester 6, these are the core development tools and technologies I've worked with most:
+      </p>
+
+      <div class="skills">
+        <div class="skill-group" data-reveal>
+          <h3>Frontend</h3>
+          <ul class="icon-row">
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" title="HTML5" loading="lazy" width="32" height="32"></li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3" title="CSS3" loading="lazy" width="32" height="32"></li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript" loading="lazy" width="32" height="32"></li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" title="Bootstrap" loading="lazy" width="32" height="32"></li>
+          </ul>
+        </div>
+
+        <div class="skill-group" data-reveal data-reveal-delay="80">
+          <h3>Backend &amp; data</h3>
+          <ul class="icon-row">
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" title="Python" loading="lazy" width="32" height="32"></li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++" title="C++" loading="lazy" width="32" height="32"></li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" title="Java" loading="lazy" width="32" height="32"></li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" alt="SQLite" title="SQLite" loading="lazy" width="32" height="32"></li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP" title="PHP" loading="lazy" width="32" height="32"></li>
+          </ul>
+        </div>
+
+        <div class="skill-group" data-reveal data-reveal-delay="160">
+          <h3>Tools</h3>
+          <ul class="icon-row">
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" title="Git" loading="lazy" width="32" height="32"></li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" title="GitHub" loading="lazy" width="32" height="32"></li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code" title="VS Code" loading="lazy" width="32" height="32"></li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pycharm/pycharm-original.svg" alt="PyCharm" title="PyCharm" loading="lazy" width="32" height="32"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- PROJECTS ---------- -->
+  <section class="band" id="projects">
+    <div class="container section">
+      <div class="section-head" data-reveal>
+        <h2 class="section-title">My projects</h2>
+        <p class="section-index">02 — Projects</p>
+      </div>
+
+      <div class="projects">
+        <article class="project-card" data-reveal>
+          <div class="project-media">
+            <img src="https://i.imgur.com/VbYl8SF.png" alt="Screenshot of the Inventory Management System" loading="lazy" width="800" height="500">
+          </div>
+          <div class="project-body">
+            <div class="tags">
+              <span class="tag tag-accent">Capstone</span>
+              <span class="tag">Full stack</span>
             </div>
-        </nav>
-    </header>
+            <h3>Inventory Management System</h3>
+            <p>A basic inventory management system built with Flask and SQLite to track stock.</p>
+            <p class="project-tech">Python · HTML · CSS · JavaScript · SQLite</p>
+            <a class="btn btn-primary btn-sm" href="https://github.com/ziczaczack/capstone" target="_blank" rel="noopener">Code repo →</a>
+          </div>
+        </article>
 
-    <main>
-        <section class="hero">
-            <div data-reveal>
-                <div class="hero-eyebrow">Welcome</div>
-                <h1>Hi! I'm <em>Lim Lok</em></h1>
-                <p>Welcome to my portfolio website. Here, I showcase my journey and everything I've learned during my Information Technology diploma at INTI College Subang.</p>
-                <div class="hero-actions">
-                    <a href="projects.html" class="btn btn-primary">Explore My Projects</a>
-                </div>
-            </div>
-            <div data-reveal data-reveal-delay="120">
-                <div class="carousel" id="profile-carousel">
-                    <img src="https://i.imgur.com/SQGsjd0.jpeg" class="carousel-slide active" alt="Profile Picture 1">
-                    <img src="https://i.imgur.com/09sN4PH.jpeg" class="carousel-slide" alt="Profile Picture 2">
-                    <img src="https://i.imgur.com/Ea6IGcU.jpeg" class="carousel-slide" alt="Profile Picture 3">
-                    <button class="carousel-btn carousel-prev" aria-label="Previous slide">&#8249;</button>
-                    <button class="carousel-btn carousel-next" aria-label="Next slide">&#8250;</button>
-                    <div class="carousel-dots">
-                        <button class="carousel-dot active" aria-label="Slide 1"></button>
-                        <button class="carousel-dot" aria-label="Slide 2"></button>
-                        <button class="carousel-dot" aria-label="Slide 3"></button>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+        <article class="project-placeholder" data-reveal data-reveal-delay="80">
+          <p class="placeholder-title">More on the way</p>
+          <p>
+            I'm still adding coursework and side projects here as I finish them. In the meantime,
+            everything I push publicly lives on GitHub.
+          </p>
+          <a class="btn btn-link" href="https://github.com/ziczaczack" target="_blank" rel="noopener">Browse my GitHub →</a>
+        </article>
+      </div>
+    </div>
+  </section>
 
-    <footer class="site-footer">
-        <p>&copy; 2025 Lim Lok. All rights reserved.</p>
-        <p><a href="https://www.linkedin.com/in/lim-lok-90b892341/" target="_blank">LinkedIn</a> &middot; <a href="https://github.com/ziczaczack" target="_blank">GitHub</a></p>
-    </footer>
+  <!-- ---------- RESUME ---------- -->
+  <section class="container section section-split" id="resume">
+    <div data-reveal>
+      <p class="section-index">03 — Resume</p>
+      <h2 class="section-title section-title-sm">The short version, on paper</h2>
+      <a class="btn btn-primary" href="https://drive.google.com/file/d/17y081T_vAtCY2FAp3vlfKwpQWgcncSkN/view?usp=sharing" target="_blank" rel="noopener">Download resume</a>
+    </div>
 
-    <button id="back-to-top" aria-label="Back to top">&uarr;</button>
+    <div data-reveal data-reveal-delay="100">
+      <div class="resume-frame">
+        <iframe src="https://drive.google.com/file/d/17y081T_vAtCY2FAp3vlfKwpQWgcncSkN/preview" title="Lim Lok resume PDF viewer" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
 
-    <script src="js/main.js"></script>
+  <!-- ---------- CONTACT ---------- -->
+  <section class="container section-contact" id="contact">
+    <div class="contact-card" data-reveal>
+      <p class="section-index contact-index">04 — Contact</p>
+      <p class="contact-title">Let's build something <em>good</em>.</p>
+      <p class="contact-lead">
+        I'm always open to discussing new projects or opportunities. The fastest way to reach me is email.
+      </p>
+      <a class="btn btn-invert" href="mailto:j24041446@student.newinti.edu.my?subject=Contact%20from%20your%20Portfolio">Send me an email</a>
+
+      <p class="contact-or">Or connect with me on</p>
+      <ul class="social">
+        <li><a href="https://www.linkedin.com/in/lim-lok-90b892341/" target="_blank" rel="noopener" title="LinkedIn"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" alt="LinkedIn" loading="lazy" width="22" height="22"></a></li>
+        <li><a href="https://www.facebook.com/master.lim27/" target="_blank" rel="noopener" title="Facebook"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/facebook/facebook-original.svg" alt="Facebook" loading="lazy" width="22" height="22"></a></li>
+        <li><a href="https://discordapp.com/users/857582786218164244" target="_blank" rel="noopener" title="Discord"><img src="https://www.svgrepo.com/show/331368/discord-v2.svg" alt="Discord" loading="lazy" width="22" height="22"></a></li>
+        <li><a href="https://x.com/sillyjayyyyy" target="_blank" rel="noopener" title="X"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/twitter/twitter-original.svg" alt="X" loading="lazy" width="22" height="22"></a></li>
+        <li><a href="https://github.com/ziczaczack" target="_blank" rel="noopener" title="GitHub"><img class="invert" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" loading="lazy" width="22" height="22"></a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="container site-footer">
+  <span>© 2026 Lim Lok. All rights reserved.</span>
+  <span class="footer-links">
+    <a href="https://www.linkedin.com/in/lim-lok-90b892341/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/ziczaczack" target="_blank" rel="noopener">GitHub</a>
+  </span>
+</footer>
+
+<button class="to-top" type="button" data-to-top aria-label="Back to top">↑</button>
+
+<script src="js/main.js"></script>
 </body>
 </html>

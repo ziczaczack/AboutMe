@@ -1,0 +1,18 @@
+# OS cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Node (only if you ever add tooling — the site itself needs none)
+node_modules/
+npm-debug.log*
+
+# Local scratch
+_archive/
+*.local.*
