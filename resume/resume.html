@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lim Lok — Resume</title>
+<!--
+  Source for Lim-Lok-Resume.pdf. Edit the text below, open this file in Chrome,
+  then Print → Save as PDF (A4, margins: None, background graphics on).
+  Never add a home address or phone number here: this file is public.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1d1b19;
+    --muted: #5d5853;
+    --faint: #8a847e;
+    --line: #e4ded6;
+    --accent: #b34a29;
+    --paper: #ffffff;
+  }
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  html { background: #ece8e2; }
+  body {
+    margin: 0;
+    font-family: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+    font-size: 9.4pt;
+    line-height: 1.42;
+    color: var(--ink);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 24px auto;
+    padding: 13mm 16mm 12mm;
+    background: var(--paper);
+    box-shadow: 0 10px 40px rgba(0,0,0,.08);
+  }
+  @media print {
+    html { background: none; }
+    .page { margin: 0; box-shadow: none; height: 297mm; overflow: hidden; }
+  }
+  a { color: inherit; text-decoration: none; }
+
+  /* ---------- header ---------- */
+  header { display: flex; justify-content: space-between; align-items: flex-end; gap: 12mm; padding-bottom: 5mm; border-bottom: 1.4pt solid var(--ink); }
+  h1 {
+    margin: 0;
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 500;
+    font-size: 30pt;
+    line-height: 1;
+    letter-spacing: -.01em;
+  }
+  .role { margin: 2.2mm 0 0; font-size: 10.5pt; font-weight: 500; color: var(--accent); letter-spacing: .01em; }
+  .contact { list-style: none; margin: 0; padding: 0; text-align: right; font-size: 8.8pt; line-height: 1.6; color: var(--muted); }
+  .contact a { color: var(--ink); }
+
+  /* ---------- sections ---------- */
+  section { margin-top: 4.6mm; }
+  h2 {
+    margin: 0 0 2.4mm;
+    font-size: 8pt;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .summary { margin: 0; color: var(--ink); max-width: 168mm; }
+
+  .entry { margin-bottom: 3mm; break-inside: avoid; }
+  .entry:last-child { margin-bottom: 0; }
+  .entry-head { display: flex; justify-content: space-between; align-items: baseline; gap: 6mm; }
+  .entry-title { font-weight: 600; font-size: 10.2pt; }
+  .entry-title .sep { color: var(--faint); font-weight: 400; margin: 0 1.2mm; }
+  .entry-title .org { font-weight: 400; }
+  .entry-date { flex: none; font-size: 8.8pt; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .entry-sub { margin-top: .4mm; font-size: 8.9pt; color: var(--muted); }
+  .entry-sub a { color: var(--accent); }
+  ul.points { margin: 1.2mm 0 0; padding-left: 4.2mm; }
+  ul.points li { margin: .55mm 0; padding-left: .6mm; }
+  ul.points li::marker { color: var(--faint); }
+
+  .skills { display: grid; grid-template-columns: 38mm 1fr; row-gap: 1.3mm; column-gap: 4mm; margin: 0; }
+  .skills dt { font-weight: 600; }
+  .skills dd { margin: 0; color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div>
+      <h1>Lim Lok</h1>
+      <p class="role">IT Undergraduate · Cloud Engineering</p>
+    </div>
+    <ul class="contact">
+      <li>Malaysia</li>
+      <li><a href="mailto:ziczaczack@gmail.com">ziczaczack@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/lim-lok-90b892341/">linkedin.com/in/lim-lok-90b892341</a></li>
+      <li><a href="https://github.com/ziczaczack">github.com/ziczaczack</a> · <a href="https://ziczaczack.github.io/AboutMe/">Portfolio</a></li>
+    </ul>
+  </header>
+
+  <section>
+    <h2>Profile</h2>
+    <p class="summary">
+      IT undergraduate specialising in Cloud Engineering at APU, with a Diploma in Information Technology
+      from INTI (CGPA 3.45). I build and ship projects end to end, from full-stack web apps with automated
+      tests and CI to networked ESP32 devices. Interested in software development, cloud and DevOps.
+    </p>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="entry">
+      <div class="entry-head">
+        <div class="entry-title">BSc (Hons) in Information Technology, Cloud Engineering<span class="sep">|</span><span class="org">Asia Pacific University (APU)</span></div>
+        <div class="entry-date">2026 – Present</div>
+      </div>
+      <ul class="points">
+        <li>Awarded a 10% Merit Scholarship and exemption from 10 modules.</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <div class="entry-head">
+        <div class="entry-title">Diploma in Information Technology<span class="sep">|</span><span class="org">INTI International University &amp; Colleges, Subang</span></div>
+        <div class="entry-date">2022 – 2024</div>
+      </div>
+      <div class="entry-sub">CGPA 3.45</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+    <div class="entry">
+      <div class="entry-head">
+        <div class="entry-title">Registrar, Administration &amp; Web Development<span class="sep">|</span><span class="org">OTC Training Centre</span></div>
+        <div class="entry-date"></div>
+      </div>
+      <ul class="points">
+        <li>Handled student registration and day-to-day administration for the centre.</li>
+        <li>Designed and developed web pages for the centre.</li>
+        <li>Built an automation workflow to collect contact emails for outreach.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <div class="entry">
+      <div class="entry-head">
+        <div class="entry-title">Trade Journal<span class="sep">|</span><span class="org">Full-stack trading journal web app</span></div>
+        <div class="entry-date">2026</div>
+      </div>
+      <div class="entry-sub">Next.js · React · TypeScript · Tailwind CSS · Supabase · Vercel — <a href="https://trade-journal-kappa-cyan.vercel.app">Live site</a> · <a href="https://github.com/ziczaczack/TradeJournal">Code</a></div>
+      <ul class="points">
+        <li>Built a multi-account journal with Tradovate CSV import, an analytics dashboard (win rate, P&amp;L, expectancy), a calendar heat map, setup playbooks and pre-trade checklists.</li>
+        <li>Modelled the data in Supabase PostgreSQL with row-level security, authentication and file storage for chart screenshots; client data fetching with TanStack Query.</li>
+        <li>Set up GitHub Actions CI to run lint, type-check, Vitest tests and a production build on every push; deployed on Vercel.</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <div class="entry-head">
+        <div class="entry-title">ESP32 Touchscreen IoT Projects<span class="sep">|</span><span class="org">Embedded &amp; networking</span></div>
+        <div class="entry-date">2026</div>
+      </div>
+      <div class="entry-sub">C++ · Arduino · ESP32 · Wi-Fi · Bluetooth LE · REST/JSON</div>
+      <ul class="points">
+        <li>Ran a web server on the ESP32 so a phone can set an RGB LED from a custom HTML/CSS/JS page, kept in two-way sync with on-device touch sliders.</li>
+        <li>Fetched live weather data from the Open-Meteo REST API, parsed the JSON and displayed it on the touchscreen.</li>
+        <li>Built a Bluetooth media remote; traced a Bluetooth start-up failure to a regression in the ESP32 Arduino core and fixed it by pinning an earlier core version.</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <div class="entry-head">
+        <div class="entry-title">Inventory Management System<span class="sep">|</span><span class="org">Diploma capstone project</span></div>
+        <div class="entry-date">2024</div>
+      </div>
+      <div class="entry-sub">Python · Flask · SQLite · HTML/CSS/JavaScript — <a href="https://github.com/ziczaczack/capstone">Code</a></div>
+      <ul class="points">
+        <li>Built a web app with Flask and SQLite to record and track stock levels.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <dl class="skills">
+      <dt>Languages</dt><dd>Python, TypeScript, JavaScript, Java, C++, PHP, SQL, HTML, CSS</dd>
+      <dt>Frameworks</dt><dd>Next.js, React, Tailwind CSS, Flask, Bootstrap, TanStack Query</dd>
+      <dt>Data &amp; platforms</dt><dd>Supabase (PostgreSQL), SQLite, Vercel, GitHub Actions</dd>
+      <dt>Tools</dt><dd>Git, GitHub, VS Code, PyCharm, Vitest, Arduino IDE</dd>
+      <dt>Currently learning</dt><dd>Docker, Linux, cloud infrastructure</dd>
+    </dl>
+  </section>
+
+</div>
+</body>
+</html>
